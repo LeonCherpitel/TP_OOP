@@ -1,5 +1,6 @@
 # Exercice 6
 
+
 coefficients_terrain = { #initialisation des coeff du terrain
     "R": 1.0,  
     "H": 1.5,  

@@ -1,4 +1,5 @@
 # Exercice 4
+
 # Question 1 
 
 robots_exploration = {"R2", "R5", "R7"}
