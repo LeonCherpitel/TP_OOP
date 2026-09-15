@@ -7,10 +7,10 @@ releve3 = ("gyroscope", 87.5, "deg")
 releves = [releve1, releve2, releve3]
 
 def afficher_releve(releve): #création de la fonction
-nom_capteur = releve[0] #initialisation des valeurs
-valeur = releve[1]
-unite = releve[2]
-return f"{nom_capteur} : {valeur} {unite}" #ne pas utiliser 
+    nom_capteur = releve[0] #initialisation des valeurs
+    valeur = releve[1]
+    unite = releve[2]
+    return f"{nom_capteur} : {valeur} {unite}" #ne pas utiliser 
 #print sinon cela crée une erreur d'assert, il faut mettre un 
 #return (voir le code faus en dessous)
 
@@ -33,15 +33,15 @@ assert afficher_releve(releve1) == "laser_avant : 2.35 m"
 
 # Question 2 
 def recalibrer(releves, nom_capteur, nouvelle_valeur):
-for i in range(len(releves)):
-if releves[i][0] == "laser_avant":
-# conversion du tuple en liste
-releve_liste = list(releves[i])
-# mod de la valeur
-releve_liste[1] = releve_liste[1] + 0.05
-# Recréation du tuple
-releves[i] = tuple(releve_liste)
-return releves
+    for i in range(len(releves)):
+        if releves[i][0] == nom_capteur:
+            # conversion du tuple en liste
+            releve_liste = list(releves[i])
+            # mod de la valeur
+            releve_liste[1] = nouvelle_valeur
+            # Recréation du tuple
+            releves[i] = tuple(releve_liste)
+    return releves
 
 nouveaux_releves = recalibrer(releves, "laser_avant", 2.40)
 
