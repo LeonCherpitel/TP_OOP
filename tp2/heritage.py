@@ -48,11 +48,11 @@ class Habitant(ABC):
 
     @abstractmethod
     def calcul_nombre_annee_avant_retraite(self):
-        """Calcule le nombre d'années restantes avant la retraite."""
+        """calcule le nombre d'années restantes avant la retraite."""
 
 
 class Adulte(Habitant):
-    """Classe représentant un adulte, héritant de la classe Habitant."""
+    """classe représentant un adulte, héritant de la classe Habitant."""
 
     AGE_RETRAITE = 62
 
@@ -89,3 +89,7 @@ try:
     assert False, "une ValueError aurait du etre levee"
 except ValueError:
     pass
+
+# En rendant calcul_nombre_annee_avant_retraite abstraite (@abstractmethod) plutôt
+# que de la définir avec un simple "pass", cela permet de définir des structures pour d'autres 
+# classes sans implémenter toutes leurs méthodes. 
